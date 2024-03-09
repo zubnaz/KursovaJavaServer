@@ -103,14 +103,14 @@ public class InitializerService {
 
                 post.setCategory(category);
 
-                List<PostEntity> posts = new ArrayList<>();
-                posts.add(post);
+                //List<PostEntity> posts = new ArrayList<>();
+                //posts.add(post);
 
-                category.setPosts(posts);
+                //category.setPosts(posts);
 
                 postRepository.save(post);
 
-                categoryRepository.save(category);
+                //categoryRepository.save(category);
             }
         }
     }
@@ -128,16 +128,16 @@ public class InitializerService {
 
             p_t_entity.setTag(tag);
 
-            List<PostTagEntity> postsTags = new ArrayList<>();
-            postsTags.add(p_t_entity);
+            //List<PostTagEntity> postsTags = new ArrayList<>();
+            //postsTags.add(p_t_entity);
 
-            post.setPostTags(postsTags);
-            tag.setPostTags(postsTags);
+            //post.setPostTags(postsTags);
+            //tag.setPostTags(postsTags);
 
             postTagRepository.save(p_t_entity);
 
-            postRepository.save(post);
-            tagRepository.save(tag);
+            //postRepository.save(post);
+            //tagRepository.save(tag);
 
 
         }

@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 @Data
 public class PostTagPK implements Serializable{
-    private int post;
-    private int tag;
+    private PostEntity post;
+    private TagEntity tag;
 }

@@ -1,2 +1,11 @@
-package org.example.Entities;public class UserRolePK {
+package org.example.Entities;
+
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+public class UserRolePK implements Serializable {
+    private UserEntity user;
+    private RoleEntity role;
 }
