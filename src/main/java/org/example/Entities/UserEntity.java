@@ -17,12 +17,12 @@ import java.util.List;
 @Table(name="tbl_users")
 public class UserEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(length = 100, nullable = false)
-    private String firstName;
+    private String name;
     @Column(length = 100, nullable = false)
-    private String lastName;
+    private String surname;
     @Column(length = 100, nullable = false)
     private String email;
     @Column(length = 20, nullable = false)

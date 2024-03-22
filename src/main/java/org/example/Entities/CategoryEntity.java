@@ -1,7 +1,6 @@
 package org.example.Entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -21,6 +20,9 @@ public class CategoryEntity {
 
     @Column(length = 50, nullable = false)
     private String urlSlug;
+
+    @Column(length = 300, nullable = false)
+    private String image;
 
     @Column(length = 200,nullable = true)
     private String description;

@@ -3,6 +3,9 @@ package org.example.Services;
 import com.github.javafaker.Cat;
 import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.example.Entities.*;
 import org.example.Repositories.CategoryRepository;
 import org.example.Repositories.PostRepository;
@@ -11,6 +14,7 @@ import org.example.Repositories.TagRepository;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
+import java.io.IOException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.time.LocalDateTime;
@@ -38,12 +42,21 @@ public class InitializerService {
     public void seedCategories(){
         final int count = 10;
         if(categoryRepository.count()<count){
+
+
             for(int i = 0;i<count;i++){
                 CategoryEntity category = new CategoryEntity();
                 String name = faker.commerce().department();
                 category.setName(name);
                 String slug = DoSlugUrl(name);
                 category.setUrlSlug(slug);
+
+                    String image = (i+1)+"_defaultFoto.jpg";
+                    category.setImage(image);
+
+
+
+
                 String description = "Виробник : "+faker.company().name()+
                         " | Матеріал : "+ faker.commerce().material();
                 category.setDescription(description);

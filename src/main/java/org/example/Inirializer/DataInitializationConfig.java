@@ -51,8 +51,8 @@ public class DataInitializationConfig {
             var user = UserEntity
                     .builder()
                     .email("admin@gmail.com")
-                    .firstName("Микола")
-                    .lastName("Підкаблучник")
+                    .name("Микола")
+                    .surname("Підкаблучник")
                     .phone("+380 97 67 56 464")
                     .password(passwordEncoder.encode("123456"))
                     .build();

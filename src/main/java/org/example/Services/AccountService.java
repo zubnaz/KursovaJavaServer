@@ -41,15 +41,15 @@ public class AccountService {
     public UserEntity register(RegisterDto dto) throws Exception {
         if(!dto.getPassword().equals(dto.getRepeatPassword()))throw new Exception("Не ідентичні паролі");
         UserEntity newUser = UserEntity.builder().
-                firstName(dto.getName()).
-                lastName(dto.getSurname()).
+                name(dto.getName()).
+                surname(dto.getSurname()).
                 email(dto.getEmail()).
-                phone(dto.getPhoneNumber()).
+                phone(dto.getPhone()).
                 password(passwordEncoder.encode(dto.getPassword())).
                 build();
         userRepository.save(newUser);
 
-        RoleEntity role = roleRepository.findByName(Roles.User);
+        RoleEntity role = roleRepository.findByName(dto.isAdmin()?Roles.Admin:Roles.User);
 
         var ur = UserRoleEntity
                 .builder()

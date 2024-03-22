@@ -1,2 +1,5 @@
-package org.example.Storage;public enum FileSaveFormat {
+package org.example.Storage;
+
+public enum FileSaveFormat {
+    JPG
 }
